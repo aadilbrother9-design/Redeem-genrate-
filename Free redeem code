@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire Quiz & Win Rewards</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0d0f17;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .ff-card {
+            background: linear-gradient(145deg, #1a1c29, #11131d);
+            border: 1px solid #2d3248;
+        }
+        .ff-button {
+            background: linear-gradient(90deg, #ff5100, #ff8800);
+            box-shadow: 0 4px 15px rgba(255, 81, 0, 0.4);
+        }
+        .ff-button:hover {
+            background: linear-gradient(90deg, #e04800, #e07700);
+            box-shadow: 0 6px 20px rgba(255, 81, 0, 0.6);
+        }
+        .option-label {
+            transition: all 0.2s ease;
+        }
+        .option-label:hover {
+            border-color: #ff8800;
+            background-color: rgba(255, 136, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between py-6 px-4">
+
+    <!-- Header Section -->
+    <header class="max-w-2xl w-full mx-auto text-center mb-6">
+        <div class="inline-block bg-orange-600/20 text-orange-400 border border-orange-500/30 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2">
+            <i class="fa-solid fa-fire mr-1"></i> Special FF Quiz
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300">
+            Free Fire Play & Earn
+        </h1>
+        <p class="text-gray-400 text-sm mt-1">Har sahi jawab par ₹10 jeetein! Maximum ₹50 Reward.</p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-2xl w-full mx-auto">
+        
+        <!-- Quiz Form Card -->
+        <div id="quizContainer" class="ff-card p-5 sm:p-8 rounded-2xl shadow-2xl">
+            <form id="quizForm" onsubmit="calculateReward(event)">
+                
+                <!-- Question 1 -->
+                <div class="mb-6 pb-5 border-b border-gray-800">
+                    <p class="font-semibold text-lg text-orange-400 mb-3">Q1. Free Fire me Bermuda Map me sabse famous peak area konsa hai?</p>
+                    <div class="space-y-2">
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q1" value="A" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600" required>
+                            <span class="ml-3 text-sm font-medium">A) Factory</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q1" value="B" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">B) Peak</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q1" value="C" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">C) Clock Tower</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q1" value="D" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">D) Bimasakti</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="mb-6 pb-5 border-b border-gray-800">
+                    <p class="font-semibold text-lg text-orange-400 mb-3">Q2. Free Fire me EP ko HP me convert karne waala sabse best character konsa hai?</p>
+                    <div class="space-y-2">
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q2" value="A" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600" required>
+                            <span class="ml-3 text-sm font-medium">A) Chrono</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q2" value="B" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">B) K (Captain Booyah)</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q2" value="C" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">C) Wukong</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q2" value="D" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">D) Hayato</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="mb-6 pb-5 border-b border-gray-800">
+                    <p class="font-semibold text-lg text-orange-400 mb-3">Q3. Free Fire game me Airdrop me milne waali powerful sniper gun konsi hai?</p>
+                    <div class="space-y-2">
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q3" value="A" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600" required>
+                            <span class="ml-3 text-sm font-medium">A) Kar98k</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q3" value="B" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">B) AWM</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q3" value="C" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">C) M82B</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q3" value="D" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">D) SKS</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="mb-6 pb-5 border-b border-gray-800">
+                    <p class="font-semibold text-lg text-orange-400 mb-3">Q4. Free Fire me 4v4 mode ko kya bolte hain jisme rounds hote hain?</p>
+                    <div class="space-y-2">
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q4" value="A" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600" required>
+                            <span class="ml-3 text-sm font-medium">A) Battle Royale</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q4" value="B" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">B) Clash Squad</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q4" value="C" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">C) Lone Wolf</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q4" value="D" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">D) Craftland</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="mb-6">
+                    <p class="font-semibold text-lg text-orange-400 mb-3">Q5. Free Fire me Enemy ke fire se bachne ke liye instant cover banane ke liye kya use hota hai?</p>
+                    <div class="space-y-2">
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q5" value="A" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600" required>
+                            <span class="ml-3 text-sm font-medium">A) Smoke Grenade</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q5" value="B" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">B) Gloo Wall</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q5" value="C" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">C) Flashbang</span>
+                        </label>
+                        <label class="option-label flex items-center p-3 rounded-xl border border-gray-700 bg-gray-800/50 cursor-pointer">
+                            <input type="radio" name="q5" value="D" class="w-4 h-4 text-orange-500 focus:ring-orange-500 bg-gray-900 border-gray-600">
+                            <span class="ml-3 text-sm font-medium">D) Landmine</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full ff-button text-white font-bold py-4 px-6 rounded-xl text-lg tracking-wider uppercase flex items-center justify-center gap-2 transition-transform active:scale-95">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Answers
+                </button>
+            </form>
+        </div>
+
+        <!-- Result Card (Initially Hidden) -->
+        <div id="resultContainer" class="hidden ff-card p-6 sm:p-8 rounded-2xl shadow-2xl text-center">
+            <div class="w-20 h-20 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            
+            <h2 class="text-2xl font-bold text-white mb-2">Quiz Completed!</h2>
+            <p class="text-gray-400 mb-6">Aapka result neeche diya gaya hai:</p>
+
+            <!-- Score Cards -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-gray-800/60 border border-gray-700 p-4 rounded-xl">
+                    <p class="text-gray-400 text-xs uppercase font-semibold">Correct Answers</p>
+                    <p id="correctCount" class="text-3xl font-extrabold text-white mt-1">0 / 5</p>
+                </div>
+                <div class="bg-orange-500/10 border border-orange-500/30 p-4 rounded-xl">
+                    <p class="text-orange-400 text-xs uppercase font-semibold">Total Reward Earned</p>
+                    <p id="totalRupees" class="text-3xl font-extrabold text-orange-400 mt-1">₹0</p>
+                </div>
+            </div>
+
+            <!-- Total Rupees Display Box -->
+            <div class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-orange-500/40 p-4 rounded-xl mb-6">
+                <span class="text-gray-300 text-sm">Reward Amount Available to Redeem:</span>
+                <div id="rewardBoxText" class="text-2xl font-black text-amber-300 mt-1">₹0 Rupees</div>
+            </div>
+
+            <!-- GET REDEEM BUTTON (Redirects on Click) -->
+            <a href="https://bahamamobile.com/gaeunxitlzjjkd" target="_blank" rel="noopener noreferrer" class="w-full ff-button text-white font-black py-4 px-6 rounded-xl text-xl tracking-wider uppercase flex items-center justify-center gap-3 transition-transform active:scale-95 inline-block">
+                <i class="fa-solid fa-gift"></i> GET REDEEM
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-xs mt-8">
+        &copy; 2026 Free Fire Fan Rewards. All rights reserved.
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Sahi jawab sabhi ke 'B' hain
+        const correctAnswers = {
+            q1: 'B',
+            q2: 'B',
+            q3: 'B',
+            q4: 'B',
+            q5: 'B'
+        };
+
+        function calculateReward(event) {
+            event.preventDefault();
+
+            let correctCount = 0;
+            const formData = new FormData(document.getElementById('quizForm'));
+
+            // Check answers
+            for (let i = 1; i <= 5; i++) {
+                const selected = formData.get('q' + i);
+                if (selected === correctAnswers['q' + i]) {
+                    correctCount++;
+                }
+            }
+
+            // Calculating Amount (₹10 per correct answer)
+            const rupeesEarned = correctCount * 10;
+
+            // Update Result HTML
+            document.getElementById('correctCount').innerText = `${correctCount} / 5`;
+            document.getElementById('totalRupees').innerText = `₹${rupeesEarned}`;
+            document.getElementById('rewardBoxText').innerText = `₹${rupeesEarned} Rupees`;
+
+            // Hide Form & Show Result
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('resultContainer').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
